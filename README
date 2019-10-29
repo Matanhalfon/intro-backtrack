@@ -1,0 +1,46 @@
+=============================
+=  README for ex11: Carrots
+
+login:matan.halfon, 
+ID number:205680648
+Name:Matan Halfon
+i disscused the ex with:
+Gal Bazia, omri yavne ,eran gilad
+
+=============================== Description:
+1)in the first part of the ex we create a naiv function that can solve 
+all kind of placing problam. by backtreck :for every empeaty spot that need placing cheaks 
+for every given vule if that a legal move by the game rules and if so call it recursivly for the 
+next emepty spot , the bace case is if we maneded to fill all the emepty spots , else it return false which
+make the function to undo the last palcing if all vules dont make it into a solution so the function return False
+2)the second part make the genral_backtreck function solve a suduko game 
+i created a function that retrun if the a placing of a number in a cord is a
+legal move or not and a function that read the sukdko file and return a dict of every cord and 
+the value the sudku takes in any part of it (0 represents for emepty space).
+after that we make all the the needed parmeters for the genral_backtrack function and then
+input that to the function 
+3)the map coloring problam , 
+in which we needed to solve the map coloring problam by the genral_backtrek
+I created a function that checkes if the palceing of a cereten color for a country is legal (means no anther nieghbor  country have
+that color already) if so the return True and if  not return False.
+and i created a function that read the adj file and translate it into a dict with key it a country and the vules are the
+neighbors country to it .
+then i placed all the right parmeters for the genral back treck means a sorted list of countryes by the num of there neighbors
+a dict of country and the color placed in them a set of colors to paint with and the legal fucntion from before. 
+4)--improving backtek-
+i attepted all kind of wayes to make the bakctreck less bruteforce and more smrat.
+a)the sort all the countrys by num of there neighbors
+b)to start by countries with smallest poossbel colors 
+i created a new back trek for thet way of sort in which the function dont go ahed by 1 for the index but
+it use a function that checks by a dict of all the possbiltes for each country is the one with the minimall 
+opptions for placeing, and run by it , in that back treck the bace case is that the dict to vales dont contians any vules of None(not painted country)
+c)in that function i  created a function thet return if placeing the color in that place
+is also legal for all the neighbors country mean it wont create a sitution in which any of the niebor country dont have any more possbels 
+colors.
+a then place that country to the parameters of the backtrek function.
+d)i tried to choose the Least Constraining color so i creat a dict in which every country have all the left options for placeing .
+for every time i place a color in one country i remove that color form the posbeltis of all the neighboring countrys .
+if the function needs to go back and uncolor a country so it use a function that update the dict of posseble vule .
+ 
+
+
